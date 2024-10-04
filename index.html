@@ -5,113 +5,57 @@
     <meta name="description" content="IK-STUDY - обучающие курсы для Олимпиадам|ЕГЭ|ОГЭ по математике, физике, информатике. (СПБ)">
     <meta name="keywords" content="Олимпиада, ЕГЭ, ОГЭ, Курсы, Обучение, Подготовка, Школа">
     <meta name="author" content="nek00oo">
-    <link rel="stylesheet" href="outlines.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>IK-Study</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><img src="#" alt="Logo"></li>
-                <li><a href="#">Статьи</a></li>
-                <li><a href="#">Курсы</a></li>
-                <li><a href="#">Войти</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <article>
-            <h1>Команда - это про нас</h1>
-            <section>
-                <h2>Достижения</h2>
-                <p>Уникальная подача материалов в форме <strong>диалога</strong>, без лекций, без шаблонов, мы учимся <strong>размышлять</strong>.
-                    Наши ученики учаться мыслить критически, даже в самых сложных задачах.
-                    Благодаря этому они занимают первые места на олимпиадах и поступают в лучшие лицеи страны.
-                </p>
-                <img src="#" alt="Photo of the tutor">
-            </section>
-            <section>
-                <h2>Присоединяйся</h2>
-                <ul>
-                    <li><ins>+ Пробное занятие</ins></li>
-                    <li><del>Безделье</del></li>
+    <div class="wrapper">
+        <header class="header">
+            <a href="" class="header__logo"><img src="#" alt="Logo"></a>
+            <nav class="header__menu">
+                <ul class="header__list">
+                    <li>
+                        <button class="header__button"><a href="#" class="header__link">О нас</a></button>
+                    </li>
+                    <li>
+                        <button class="header__button"><a href="#" class="header__link">Репетиторы</a></button>
+                    </li>
+                    <li>
+                        <button class="header__button"><a href="#" class="header__link">Login</a></button>
+                    </li>
                 </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="content">
+                <h1 class="content__title"></h1>
+                <section class="content__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate deleniti facilis maxime nisi ratione vel vero. Aliquid autem beatae cum cupiditate deleniti, earum eius exercitationem explicabo fuga fugiat illum labore libero, maxime minima nihil, nulla odio perferendis porro quasi reprehenderit repudiandae saepe similique soluta sunt veritatis voluptatem voluptatum! Dolore, odit!</p>
+                </section>
+                <div class="content__image"></div>
             </section>
-            <pre>
-\\          //\\ \
-.\\        ///_\\\\
-:/>`      /(| `|'\\\
- Y/\      )))\_-_/((\
-  \ \    ./'_/ " \_`\)
-   \ \.-" ._ \   /   \
-    \ _.-" (_ \Y/ _) |
-     "      )" | ""/||
-         .-'  .'  / ||
-        /    `   /  ||
-       |    __  :   ||_
-       |   / \   \ '|\`
-       |  |   \   \
-       |  |    `.  \
-       |  |      \  \
-       |  |       \  \
-       |  |        \  \
-       |  |         \  \
-       /__\          |__\
-       /.|    DrS.    |.\_
-      `-''            ``--'
-
-        </pre>
-        </article>
-        <div>
-            <div>
-                <h3>Где мы?</h3>
-                <img src="" alt="Map">
-            </div>
-            <ul>
-                <li><img src="" alt="Photo of the audience"></li>
-                <li><img src="" alt="Photo of the audience"></li>
-                <li><img src="" alt="Photo of the audience"></li>
-            </ul>
-        </div>
-    </main>
-    <aside>
-        <h3>Прогай также</h3>
-        <pre>
-            <code>
-            features = data.copy()
-
-            # Select the numeric columns
-            numeric_subset = data.select_dtypes('number')
-
-            # Create columns with log of numeric columns
-            for col in numeric_subset.columns:
-            # Skip the Energy Star Score column
-            if col == 'score':
-            next
-            else:
-            numeric_subset['log_' + col] = np.log(numeric_subset[col]
-            </code>
-        </pre>
-        <div>
-            <blockquote cite="https://tproger.ru/articles/programming-quotes">
-                <p><b>Программирование</b> — это сложно. Основные правила, на которых все строится, очень просты, но по мере разработки программа сама начинает вводить свои правила и законы. Таким образом, программист <em>строит лабиринт</em>, в котором сам же может и потеряться.</p>
-            </blockquote>
-            <p>- Marijn Haverbeke</p>
-        </div>
-    </aside>
-    <aside>
-        <h3>Наша формула успеха:</h3>
-        <p>Успех = Усердие<sup>2</sup> + Уникальность</p>
-    </aside>
-    <footer>
-        <img src="#" alt="Логотип">
-        <nav>
-            <ul>
-                <li><a href="#"><img src="" alt="Instagram"></a></li>
-                <li><a href="#"><img src="" alt="VK"></a></li>
-                <li><a href="#"><img src="" alt="YouTube"></a></li>
-            </ul>
-        </nav>
-    </footer>
+            <section class="gallery">
+                <div class="gallery__item">
+                    <img src="" alt="" class="gallery__image">
+                </div>
+                <div class="gallery__item">
+                    <img src="" alt="" class="gallery__image">
+                </div>
+                <div class="gallery__item">
+                    <img src="" alt="" class="gallery__image">
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <img src="#" alt="Логотип">
+            <nav class="footer__menu">
+                <ul>
+                    <li><a href="#" class="footer__link"><img src="" alt="Instagram"></a></li>
+                    <li><a href="#" class="footer__link"><img src="" alt="VK"></a></li>
+                    <li><a href="#" class="footer__link"><img src="" alt="YouTube"></a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
 </body>
 </html>
