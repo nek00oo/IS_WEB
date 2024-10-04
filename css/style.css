@@ -10,7 +10,6 @@
             "header"
             "main"
             "footer";
-
 }
 
 .header {
@@ -45,7 +44,7 @@
 
 .header__list li {
     display: grid;
-    margin: 0 1vw;
+    /*margin: 0 1vw;*/
     outline: 3px solid red;
 }
 
@@ -56,8 +55,8 @@
 }
 
 .header__list li:last-child{
-    margin-left: 3vw;
-    margin-right: 0;
+    /*margin-left: 3vw;*/
+    /*margin-right: 0;*/
 }
 
 .header__button:hover {
@@ -74,13 +73,43 @@
 .content {
     grid-column: 2/3;
     display: grid;
-
+    grid-template: auto minmax(auto, 1fr) / minmax(auto, 1fr) minmax(auto, 1fr);
+    grid-template-areas:
+                        "text image"
+                        "gallery gallery";
 }
 
 
+.content__text {
+    grid-area: text;
+
+}
+
+.content__title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 2vh;
+}
+
+.content__paragraph {
+    font-size: 16px;
+}
+
+.content__image {
+    grid-area: image;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.gallery {
+    grid-area: gallery;
+}
+
 .content__image img{
-    width: 30%;
-    height: 30%;
+    max-width: 70%;
+    border-radius: 45% 0 0 45%;
+    object-fit: cover;
+
 }
 
 .footer {
