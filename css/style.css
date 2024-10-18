@@ -66,8 +66,10 @@
     grid-template: 1fr / minmax(auto, 1fr) 6fr minmax(auto, 1fr);
 }
 
-@media (min-width: 630px) {
+@media (min-width: 950px) {
+    .main {
 
+    }
 }
 
 .content {
@@ -107,6 +109,7 @@
 
 .content__image img{
     max-width: 90%;
+    max-height: 90%;
     border-radius: 45% 0 0 45%;
     object-fit: cover;
 }
