@@ -6,21 +6,21 @@
     <meta name="keywords" content="Репетитор, Олимпиада, ЕГЭ, ОГЭ, Курсы, Обучение, Подготовка, Школа">
     <meta name="author" content="nek00oo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="src/css/normalize.css">
+    <link rel="stylesheet" href="src/css/main_page.css">
     <title>SkillBridge</title>
 </head>
 <body>
     <div class="wrapper">
         <header class="header">
-            <a href="" class="header__logo"><img src="img/logo.svg" alt="Logo"></a>
+            <a href="" class="header__logo"><img src="public/logo.svg" alt="Logo"></a>
             <nav class="header__menu">
                 <ul class="header__list">
                     <li>
                         <button class="header__button"><a href="#" class="header__link">О нас</a></button>
                     </li>
                     <li>
-                        <button class="header__button"><a href="#" class="header__link">Репетиторы</a></button>
+                        <button class="header__button"><a href="src/pages/tutors_page.html" class="header__link">Репетиторы</a></button>
                     </li>
                     <li>
                         <button class="header__button"><a href="#" class="header__link">Login</a></button>
@@ -37,33 +37,36 @@
                     <p class="content__paragraph"><strong>SkillBridge – это</strong> ваш надежный мост к новым знаниям и успеху в учебе!</p>
                 </section>
                 <div class="content__image">
-                    <img src="img/teacher.png" alt="Photo">
+                    <img src="public/teacher.png" alt="Photo">
                 </div>
                 <section class="gallery">
                     <ul class="gallery__list">
                         <li class="gallery__item">
-                            <img src="img/photo1.png" alt="Дети на пляже" class="gallery__image">
+                            <img class="gallery__image" src="public/photo1.png" alt="Дети на пляже">
                         </li>
                         <li class="gallery__item">
-                            <img src="img/photo2.png" alt="Совместное фото на квизе" class="gallery__image">
+                            <img class="gallery__image" src="public/photo2.png" alt="Совместное фото на квизе">
                         </li>
                         <li class="gallery__item">
-                            <img src="img/photo3.png" alt="Общее фото с занятия" class="gallery__image">
+                            <img  class="gallery__image" src="public/photo3.png" alt="Общее фото с занятия">
                         </li>
                     </ul>
+                    <button class="gallery__button gallery__button--prev">←</button>
+                    <button class="gallery__button gallery__button--next">→</button>
                 </section>
             </section>
         </main>
         <footer class="footer">
-            <a href="" class="footer__logo"><img src="img/logo.svg" alt="Logo"></a>
+            <a href="" class="footer__logo"><img src="public/logo.svg" alt="Logo"></a>
             <nav class="footer__menu">
                 <ul class="footer__list">
-                    <li><a href="#" class="footer__link"><img src="img/vk-icon.svg" alt="VK"></a></li>
-                    <li><a href="#" class="footer__link"><img src="img/instagram-icon.svg" alt="Instagram"></a></li>
-                    <li><a href="#" class="footer__link"><img src="img/youtube-icon.svg" alt="YouTube"></a></li>
+                    <li><a href="#" class="footer__link"><img src="public/vk-icon.svg" alt="VK"></a></li>
+                    <li><a href="#" class="footer__link"><img src="public/instagram-icon.svg" alt="Instagram"></a></li>
+                    <li><a href="#" class="footer__link"><img src="public/youtube-icon.svg" alt="YouTube"></a></li>
                 </ul>
             </nav>
         </footer>
     </div>
+    <script src="dist/bundle.js"></script>
 </body>
 </html>

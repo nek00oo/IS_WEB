@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6",             // Указывает, в какую версию JavaScript компилировать
+    "module": "ES6",             // Указывает систему модулей
+    "strict": true,              // Включает строгий режим TypeScript
+    "esModuleInterop": true,     // Обеспечивает совместимость с модулями ES
+    "skipLibCheck": true         // Пропускает проверку типов библиотек
+  },
+  "include": ["src/scripts/**/*.ts"],    // Указываем, какие файлы нужно компилировать
+  "exclude": ["node_modules"]
+}
