@@ -1,4 +1,5 @@
 module.exports = {
+    mode: 'development',
     entry: './src/scripts/index.ts',
     module: {
         rules: [
@@ -8,6 +9,12 @@ module.exports = {
                 exclude: /node_modules/,
             },
         ],
+    },
+    devServer: {
+        static: './',
+        open: true,
+        hot: true, // не работает
+        port: 8080,
     },
     resolve: {
         extensions: ['.ts', '.js'],
