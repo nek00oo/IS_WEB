@@ -51,10 +51,15 @@
 }
 
 .header__link {
-    font-size: 16px;
+    display: block;
+    font-size: 1.4rem;
     white-space: nowrap;
     color: black;
     text-align: center;
+}
+
+.header__link.active {
+    color: #007bff;
 }
 
 .main {
@@ -111,7 +116,6 @@
     transition: transform 0.5s ease;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-
 }
 
 .gallery__item {
@@ -189,6 +193,7 @@
     }
     .gallery__list {
         flex-direction: row;
+        overflow: initial;
     }
     .gallery__item{
         flex-shrink: 1;

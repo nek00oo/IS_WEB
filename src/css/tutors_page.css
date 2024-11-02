@@ -51,6 +51,10 @@
     text-align: center;
 }
 
+.header__link.active {
+    color: #007bff;
+}
+
 .main {
     grid-area: main;
     display: grid;
