@@ -2,6 +2,10 @@
     --gr_color: #D9D9D9;
 }
 
+body {
+    font-family: Cambria, sans-serif;
+}
+
 .wrapper {
     min-height: 100%;
     display: grid;
@@ -46,8 +50,10 @@
     transition: background-color 0.3s ease;
 }
 
-.header__button:hover {
-    background-color: var(--gr_color);
+@media (any-hover: hover) {
+    .header__button:hover {
+        background-color: var(--gr_color);
+    }
 }
 
 .header__link {
