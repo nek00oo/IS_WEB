@@ -137,11 +137,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (schedule) {
             const table = document.createElement("table");
             table_body = table.createTBody()
-
             schedule.rows.forEach((rowData, rowIndex) => {
                 const row = rowIndex === 0 ? table.createTHead().insertRow() : table_body.insertRow();
-                rowData.forEach((cellData) => {
-                    const cell = rowIndex === 0 ? document.createElement("th") : row.insertCell();
+                rowData.forEach((cellData, columnIndex) => {
+                    const cell = (rowIndex === 0 || columnIndex === 0) ? document.createElement("th") : row.insertCell();
                     cell.textContent = cellData;
                     row.appendChild(cell);
                 });
