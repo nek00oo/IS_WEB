@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
             gender: e.target.gender.value
         };
 
+        const spinner = document.getElementById('spinner');
+        spinner.style.display = 'block';
+        const errorBanner = document.getElementById('errorBanner');
+
+
         fetch('https://jsonplaceholder.typicode.com/users', {
             method: 'POST',
             headers: {
@@ -21,10 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 console.log('User registered:', data);
-                alert('Registration successful!');
                 localStorage.setItem('userData', JSON.stringify(data));
                 window.location.href = '/src/pages/profile.html';
             })
-            .catch(error => console.error('Error registering user:', error));
+            .catch(error => {
+                console.error('Error registering user:', error);
+                errorBanner.innerHTML = "Что-то пошло не так"
+                errorBanner.style.display = 'block';
+            })
+            .finally(() => {
+            spinner.style.display = 'none';
+        });
     });
 });

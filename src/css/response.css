@@ -1,0 +1,33 @@
+.spinner {
+    display: none;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: auto auto;
+}
+
+.error-banner {
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    position: absolute;
+    top: -40px;
+    left: 25%;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    text-align: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
