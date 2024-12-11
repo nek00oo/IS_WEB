@@ -12,13 +12,13 @@
 
 .error-banner {
     display: none;
-    background-color: #f8d7da;
+    background-color: rgba(255, 175, 180, .9);
     color: #721c24;
     position: absolute;
     top: -40px;
     left: 25%;
     padding: 10px;
-    border: 1px solid #f5c6cb;
+    border: 1px solid rgb(255, 175, 180);
     border-radius: 4px;
     text-align: center;
 }

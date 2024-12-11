@@ -25,11 +25,21 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .then(response => response.json())
             .then(data => {
+                iziToast.success({
+                    message: 'Вы успешно вошли!',
+                    position: 'bottomRight'
+                });
                 console.log('User registered:', data);
                 localStorage.setItem('userData', JSON.stringify(data));
-                window.location.href = '/src/pages/profile.html';
+                setTimeout(() => {
+                    window.location.href = '/src/pages/profile.html'
+                }, 800);
             })
             .catch(error => {
+                iziToast.error({
+                    message: 'Что-то пошло не так, попробуйте позже.',
+                    position: 'bottomRight'
+                });
                 console.error('Error registering user:', error);
                 errorBanner.innerHTML = "Что-то пошло не так"
                 errorBanner.style.display = 'block';

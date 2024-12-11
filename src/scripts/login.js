@@ -16,18 +16,32 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
             console.log(email)
 
             if (user) {
+                iziToast.success({
+                    message: 'Вы успешно вошли!',
+                    position: 'bottomRight'
+                });
                 console.log('Login successful:', user);
                 localStorage.setItem('userData', JSON.stringify(user));
-                window.location.href = '/src/pages/profile.html';
+                setTimeout(() => {
+                    window.location.href = '/src/pages/profile.html'
+                }, 800);
             } else {
+                iziToast.error({
+                    message: 'Пользователь не найден',
+                    position: 'bottomRight',
+                });
                 errorBanner.innerHTML = "Пользователь не найден"
                 errorBanner.style.display = 'block';
             }
         })
         .catch(error => {
+            iziToast.error({
+                message: 'Что-то пошло не так, попробуйте позже.',
+                position: 'bottomRight',
+            });
             console.error('Error login user:', error);
             errorBanner.innerHTML = "Что-то пошло не так"
-            errorBanner.style.display = 'block'; // Показываем плашку с ошибкой
+            errorBanner.style.display = 'block';
         })
         .finally(() => {
         spinner.style.display = 'none';
