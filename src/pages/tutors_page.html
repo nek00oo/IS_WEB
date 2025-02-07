@@ -8,7 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../css/tutors_page.css">
-        <script src="../scripts/utils/headerLinkActive.js"></script>
         <title>SkillBridge</title>
     </head>
     <body>
@@ -140,6 +139,7 @@
                             </div>
                         </div>
                     </article>
+
                 </div>
             </main>
             <footer class="footer">
@@ -167,5 +167,55 @@
                 </nav>
             </footer>
         </div>
+        <div id="modal" class="modal">
+            <div class="modal__content">
+                <span class="modal__close">&times;</span>
+                <div class="modal__body">
+                    <img class="modal__image" src="" alt="Tutor photo">
+                    <div class="modal__details">
+                        <h2 class="modal__title"></h2>
+                        <ul class="modal__info">
+                            <li><strong>Опыт работы:</strong> <span class="modal__experience"></span></li>
+                            <li><strong>Возраст:</strong> <span class="modal__age"></span></li>
+                            <li><strong>Предметы:</strong> <span class="modal__subjects"></span></li>
+                        </ul>
+                        <div class="rating">
+                            <div class="rating__item">
+                                <div class="rating__title">Атмосфера на уроке</div>
+                                <div class="rating__bar">
+                                    <div class="rating__fill" style="width: 80%;"></div>
+                                    <div class="rating__marker" style="left: 80%;">|</div>
+                                </div>
+                            </div>
+                            <div class="rating__item">
+                                <div class="rating__title">Ясность изложения</div>
+                                <div class="rating__bar">
+                                    <div class="rating__fill" style="width: 90%;"></div>
+                                    <div class="rating__marker" style="left: 90%;">|</div>
+                                </div>
+                            </div>
+                            <div class="rating__item">
+                                <div class="rating__title">Обратная связь</div>
+                                <div class="rating__bar">
+                                    <div class="rating__fill" style="width: 60%;"></div>
+                                    <div class="rating__marker" style="left: 60%;">|</div>
+                                </div>
+                            </div>
+                            <div class="rating__item">
+                                <div class="rating__title">Стоимость услуг</div>
+                                <div class="rating__bar">
+                                    <div class="rating__fill" style="width: 75%;"></div>
+                                    <div class="rating__marker" style="left: 75%;">|</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="../scripts/utils/headerLinkActive.js"></script>
+        <script src="../scripts/tutors_page.js"></script>
     </body>
 </html>

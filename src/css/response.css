@@ -31,3 +31,25 @@
         transform: rotate(360deg);
     }
 }
+
+.iziToast {
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+
+.iziToast:after {
+    box-shadow: none !important;
+}
+
+.iziToast-message {
+    font-family: Cambria, sans-serif !important;
+    font-size: 1rem !important;
+}
+
+.iziToast-color-red .iziToast-message {
+    color: #721c24 !important;
+}
+
+.iziToast-progressbar {
+    display: none !important;
+}
