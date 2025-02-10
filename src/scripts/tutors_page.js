@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".main__card").forEach(card => {
         card.addEventListener("click", function () {
-            const imageSrc = card.querySelector(".card__image img").src;
-            const name = card.querySelector(".card__title").textContent;
+            const imageSrc = card.querySelector(".main-card__image img").src;
+            const name = card.querySelector(".main-card__title").textContent;
             const experience = card.querySelector(".information-list__item:nth-child(1) .information__text").textContent;
             const age = card.querySelector(".information-list__item:nth-child(2) .information__text").textContent;
             const subjects = card.querySelector(".information-list__item:nth-child(3) .information__text").textContent;
