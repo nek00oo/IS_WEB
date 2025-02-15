@@ -1,5 +1,12 @@
 :root {
     --gr_color: #D9D9D9;
+    --pages-background-color: #edf2f4;
+    --header-text-color: #edf2f4;
+    --main_card-background-color: #2B2D42;
+    --card-text-color: #3e3e3e;
+    --primary-button-background-color: #ef233c;
+    --hover-border-color: #ef233c;
+    --secondary-button-background-color: #4a4c5a;;
 }
 
 body {
