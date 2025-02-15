@@ -3,32 +3,67 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
         <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../css/login.css">
         <link rel="stylesheet" href="../css/response.css">
+        <title>Login</title>
     </head>
     <body>
         <div class="wrapper">
             <div class="spinner" id="spinner"></div>
-            <div class="form-container">
-                <div class="error-banner" id="errorBanner"></div>
-                <h2>Login</h2>
-                <form id="loginForm" class="login-form">
-                    <label>
-                        <span>Email</span>
-                        <input type="email" name="email" placeholder="Email" required>
-                    </label>
-                    <label>
-                        <span>Password</span>
-                        <input type="password" name="password" placeholder="Password" required>
-                    </label>
-                    <button type="submit" class="login-button">Login</button>
-                </form>
-                <p class="redirect">
-                    Don't have an account?
-                    <a href="/src/pages/register.html">Register here</a>
-                </p>
+            <div class="container" id="container">
+                <div class="sign-up">
+                    <div class="sign-up__wrapper">
+                        <form class="sign-up__form">
+                            <span class="sign-up__title">Create Account</span>
+                            <label>
+                                <input type="text" name="username" placeholder="Name">
+                            </label>
+                            <label>
+                                <input type="email" name="email" placeholder="Email" required>
+                            </label>
+                            <label>
+                                <input type="password" name="password" placeholder="Password" required>
+                            </label>
+                            <label>
+                                <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                            </label>
+                            <button class="primary-button" type="submit">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="sign-in">
+                    <div class="sign-in__wrapper" id="loginForm">
+                        <form class="sign-in__form">
+                            <span class="sign-in__title">Sign In</span>
+                            <label>
+                                <input type="email" name="email" placeholder="Email" required>
+                            </label>
+                            <label>
+                                <input type="password" name="password" placeholder="Password" required>
+                            </label>
+                            <a class="forgot-password" href="#">Forgot your password ?</a>
+                            <button class="primary-button" type="submit">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="toggle-container">
+                    <div class="toggle">
+
+                        <div class="toggle-panel toggle-left">
+                            <span>Welcome to SkillBridge</span>
+                            <button class="secondary-button" id="login">Sign In</button>
+                        </div>
+
+                        <div class="toggle-panel toggle-right">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
+                            <button class="secondary-button" id="sign-up">Sign Up</button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
 
