@@ -39,18 +39,18 @@ const tutors = [
 
 function createTutorCard(tutor) {
     return `
-        <div class="tutor-card">
-            <img src="${tutor.image}" alt="${tutor.name}" class="tutor-image">
+        <div class="tutors-section__tutor-card">
+            <img src="${tutor.image}" alt="${tutor.name}" class="tutor-card__image">
            
-                <h2 class="tutor-name">${tutor.name}</h2>
-                <div class="tutor-subject">${tutor.subject}</div>
-                <div class="rating">
+                <h2 class="tutor-card__name">${tutor.name}</h2>
+                <div class="tutor-card__subject">${tutor.subject}</div>
+                <div class="tutor-card__rating">
                     ${'★'.repeat(Math.floor(tutor.rating))}${tutor.rating % 1 ? '½' : ''}
                     ${' '}${tutor.rating}
                 </div>
-                <p class="tutor-description">${textVisible(tutor.description)}</p>
-                <p class="tutor-price">${tutor.price} ₽/час</p>
-                <a href="#" class="contact-button">Связаться</a>
+                <p class="tutor-card__description">${tutor.description}</p>
+                <p class="tutor-card__price">${tutor.price} ₽/час</p>
+                <a href="#" class="tutor-card__contact-button">Связаться</a>
            
         </div>
     `;
@@ -100,10 +100,8 @@ function filterTutors() {
     renderTutors(filtered);
 }
 
-// Event listeners
 document.getElementById('searchInput').addEventListener('input', filterTutors);
 document.getElementById('subjectFilter').addEventListener('change', filterTutors);
 document.getElementById('priceFilter').addEventListener('change', filterTutors);
 
-// Initial render
 renderTutors();
