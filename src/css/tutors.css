@@ -159,7 +159,6 @@ select:focus {
 }
 
 .contact-button {
-    display: inline-block;
     padding: 1rem 2rem;
     background-color: var(--color-red);
     color: white;
@@ -169,7 +168,6 @@ select:focus {
     transition: all 0.3s ease;
     text-align: center;
     width: 100%;
-
 }
 
 .contact-button:hover {

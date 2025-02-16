@@ -10,9 +10,9 @@ const tutors = [
     },
     {
         id: 2,
-        name: 'Сергей Иванов',
+        name: 'Алина Беренцева',
         subject: 'Физика',
-        description: 'Кандидат физико-математических наук. Индивидуальный подход к каждому ученику. F[F[[[[[[[[[[F[F[F[F[F[[F[ F[[F[F[ [F[ F[F [F[[F[F[ [F[F[F[F[[F[F[F[[F',
+        description: 'Кандидат физико-математических наук. Индивидуальный подход к каждому ученику.',
         price: 2100,
         rating: 4.9,
         image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
@@ -48,12 +48,19 @@ function createTutorCard(tutor) {
                     ${'★'.repeat(Math.floor(tutor.rating))}${tutor.rating % 1 ? '½' : ''}
                     ${' '}${tutor.rating}
                 </div>
-                <p class="tutor-description">${tutor.description}</p>
+                <p class="tutor-description">${textVisible(tutor.description)}</p>
                 <p class="tutor-price">${tutor.price} ₽/час</p>
                 <a href="#" class="contact-button">Связаться</a>
            
         </div>
     `;
+}
+
+function textVisible(text, wordLimit = 7) {
+    const textWords = text.split(' ');
+    const isLongText = textWords.length > wordLimit;
+
+    return isLongText ? textWords.slice(0, wordLimit).join(' ') + '...' : text;
 }
 
 function renderTutors(filteredTutors = tutors) {
