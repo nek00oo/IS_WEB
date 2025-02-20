@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../css/login.module.css">
         <link rel="stylesheet" href="../css/response.css">
         <title>Login</title>
     </head>
@@ -12,7 +12,7 @@
         <div class="wrapper">
             <div class="spinner" id="spinner"></div>
             <div class="container" id="container">
-                <div class="sign-up">
+                <section class="sign-up">
                     <div class="sign-up__wrapper">
                         <form class="sign-up__form">
                             <span class="sign-up__title">Create Account</span>
@@ -31,23 +31,31 @@
                             <button class="primary-button" type="submit">Sign Up</button>
                         </form>
                     </div>
-                </div>
+                </section>
 
-                <div class="sign-in">
+                <section class="sign-in">
                     <div class="sign-in__wrapper" id="loginForm">
                         <form class="sign-in__form">
                             <span class="sign-in__title">Sign In</span>
                             <label>
-                                <input type="email" name="email" placeholder="Email" required>
+                                <span>Email</span>
+                                <input type="email" name="email" placeholder="Email" autofocus required>
                             </label>
                             <label>
+                                <span class="password-label">
+                                    <span>Password</span>
+                                    <a class="forgot-password" href="#">Forgot password ?</a>
+                                </span>
                                 <input type="password" name="password" placeholder="Password" required>
                             </label>
-                            <a class="forgot-password" href="#">Forgot your password ?</a>
+                            <div class="sign-in__bottom">
+                                <span>Don't have an account?</span>
+                                <a href="register_mobile.html">Sign Up</a>
+                            </div>
                             <button class="primary-button" type="submit">Sign In</button>
                         </form>
                     </div>
-                </div>
+                </section>
 
                 <div class="toggle-container">
                     <div class="toggle">

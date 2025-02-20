@@ -42,6 +42,11 @@ body {
     height: auto;
 }
 
+.header__menu-button {
+    font-size: 18px;
+    color: #fff;
+}
+
 .header__body {
     display: flex;
     flex-direction: column;

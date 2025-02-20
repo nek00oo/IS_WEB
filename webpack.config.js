@@ -13,9 +13,11 @@ module.exports = {
     devServer: {
         static: './',
         open: true,
+        host: '0.0.0.0',
         hot: true, // не работает
         port: 8080,
     },
+
     resolve: {
         extensions: ['.ts', '.js'],
     },
