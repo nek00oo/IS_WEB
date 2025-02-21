@@ -47,7 +47,7 @@ document.querySelectorAll('.subject').forEach(subject => {
     });
 });
 
-// Edit profile functionality
+// Edit profile-section functionality
 const editModeBtn = document.getElementById('editModeBtn');
 const imageUpload = document.getElementById('imageUpload');
 const imagePreview = document.getElementById('imagePreview');
@@ -58,7 +58,7 @@ const studentAge = document.getElementById('studentAge');
 const studentAgeDisplay = document.getElementById('studentAgeDisplay');
 const saveProfileBtn = document.getElementById('saveProfileBtn');
 
-// Open edit profile modal
+// Open edit profile-section modal
 editModeBtn.addEventListener('click', () => {
     imagePreview.src = profileImage.src || '../../public/default-avatar.png';
     studentName.value = studentNameDisplay.textContent.trim();
