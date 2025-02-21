@@ -1,76 +1,6 @@
-let editMode = false;
-
-const editModeBtn = document.getElementById('editModeBtn');
-editModeBtn.addEventListener('click', () => {
-    editMode = !editMode;
-    document.body.classList.toggle('edit-mode', editMode);
-    editModeBtn.classList.toggle('active', editMode);
-    toggleEditableFields();
-});
-
-function toggleEditableFields() {
-    const nameInput = document.getElementById('studentName');
-    const nameDisplay = document.getElementById('studentNameDisplay');
-    nameInput.classList.toggle('hidden', !editMode);
-    nameDisplay.classList.toggle('hidden', editMode);
-
-    const ageInput = document.getElementById('studentAge');
-    const ageDisplay = document.getElementById('studentAgeDisplay');
-    ageInput.classList.toggle('hidden', !editMode);
-    ageDisplay.classList.toggle('hidden', editMode);
-}
-
-document
-    .getElementById('imageUpload')
-    .addEventListener('change', function (event) {
-        const file = event.target.files[0];
-        if (file && editMode) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                document.getElementById('profileImage').src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-
-document
-    .getElementById('studentName')
-    .addEventListener('input', function (event) {
-        if (editMode) {
-            const value = event.target.value;
-            document.getElementById('studentNameDisplay').textContent = value;
-            localStorage.setItem('studentName', value);
-        }
-    });
-
-document
-    .getElementById('studentAge')
-    .addEventListener('input', function (event) {
-        if (editMode) {
-            const value = event.target.value;
-            document.getElementById('studentAgeDisplay').textContent = value;
-            localStorage.setItem('studentAge', value);
-        }
-    });
-
-window.addEventListener('load', function () {
-    const savedName = localStorage.getItem('studentName');
-    const savedAge = localStorage.getItem('studentAge');
-
-    if (savedName) {
-        document.getElementById('studentName').value = savedName;
-        document.getElementById('studentNameDisplay').textContent = savedName;
-    }
-
-    if (savedAge) {
-        document.getElementById('studentAge').value = savedAge;
-        document.getElementById('studentAgeDisplay').textContent = savedAge;
-    }
-});
-
-const modal = document.getElementById('subjectModal');
+const subjectModal = document.getElementById('subjectModal');
+const editProfileModal = document.getElementById('editProfileModal');
 const modalTitle = document.getElementById('modalTitle');
-const modalClose = document.querySelector('.modal__close');
 const tasksList = document.getElementById('tasksList');
 
 const subjectData = {
@@ -100,9 +30,12 @@ const subjectData = {
     }
 };
 
+// Add click handlers to subjects
 document.querySelectorAll('.subject').forEach(subject => {
-    subject.addEventListener('click', () => {
+    subject.addEventListener('click', (e) => {
         const subjectType = subject.dataset.subject;
+        if (!subjectType || !subjectData[subjectType]) return; // Проверка наличия данных
+
         const data = subjectData[subjectType];
 
         modalTitle.textContent = data.title;
@@ -110,16 +43,86 @@ document.querySelectorAll('.subject').forEach(subject => {
             .map(task => `<li>${task}</li>`)
             .join('');
 
-        modal.classList.remove('hidden');
+        subjectModal.classList.remove('hidden');
     });
 });
 
-modalClose.addEventListener('click', () => {
-    modal.classList.add('hidden');
+// Edit profile functionality
+const editModeBtn = document.getElementById('editModeBtn');
+const imageUpload = document.getElementById('imageUpload');
+const imagePreview = document.getElementById('imagePreview');
+const profileImage = document.getElementById('profileImage');
+const studentName = document.getElementById('studentName');
+const studentNameDisplay = document.getElementById('studentNameDisplay');
+const studentAge = document.getElementById('studentAge');
+const studentAgeDisplay = document.getElementById('studentAgeDisplay');
+const saveProfileBtn = document.getElementById('saveProfileBtn');
+
+// Open edit profile modal
+editModeBtn.addEventListener('click', () => {
+    imagePreview.src = profileImage.src || '../../public/default-avatar.png';
+    studentName.value = studentNameDisplay.textContent.trim();
+    studentAge.value = studentAgeDisplay.textContent.trim();
+    editProfileModal.classList.remove('hidden');
 });
 
+//TODO переделать сохранение изображения (в localStorage ограничение 5MB)
+
+// Обработчик загрузки изображения
+imageUpload.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            imagePreview.src = e.target.result; // Сохраняем base64
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// Сохранение данных профиля
+saveProfileBtn.addEventListener('click', () => {
+    profileImage.src = imagePreview.src;
+    studentNameDisplay.textContent = studentName.value.trim();
+    studentAgeDisplay.textContent = studentAge.value.trim();
+
+    // Сохраняем base64 в localStorage
+    localStorage.setItem('studentName', studentName.value.trim());
+    localStorage.setItem('studentAge', studentAge.value.trim());
+    localStorage.setItem('profileImage', imagePreview.src);
+
+    editProfileModal.classList.add('hidden');
+});
+
+// Загрузка сохраненных данных при загрузке страницы
+window.addEventListener('load', function() {
+    const savedName = localStorage.getItem('studentName');
+    const savedAge = localStorage.getItem('studentAge');
+    const savedImage = localStorage.getItem('profileImage');
+
+    if (savedName) studentNameDisplay.textContent = savedName;
+    if (savedAge) studentAgeDisplay.textContent = savedAge;
+    if (savedImage) profileImage.src = savedImage;
+});
+
+
+// Close modals when clicking the close button
+document.querySelectorAll('.modal__close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Предотвращаем всплытие
+        const modal = e.target.closest('.modal');
+        if (modal) {
+            modal.classList.add('hidden');
+        }
+    });
+});
+
+// Close modals when clicking outside of them
 window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.add('hidden');
+    if (e.target === subjectModal) {
+        subjectModal.classList.add('hidden');
+    }
+    if (e.target === editProfileModal) {
+        editProfileModal.classList.add('hidden');
     }
 });

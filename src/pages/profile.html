@@ -4,14 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Student Profile</title>
-        <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../css/profile.css" />
     </head>
     <body>
-        <nav class="nav">
-            <button class="nav__button" id="editModeBtn">Режим редактирования</button>
-        </nav>
-
         <div class="container">
             <div class="profile">
                 <div class="profile__header">
@@ -19,35 +14,26 @@
                         <img
                             id="profileImage"
                             class="profile__image"
-                            src="../../public/profile_photo.png"
+                            src="../../public/default-avatar.png"
                             alt="Profile Photo"
                         />
-                        <input type="file" id="imageUpload" class="profile__image-input" accept="image/*" />
-                        <label for="imageUpload" class="profile__image-upload">+</label>
                     </div>
 
                     <div class="profile__info">
                         <div class="profile__name">
-                            <span id="studentNameDisplay" class="profile__name-text"></span>
-                            <input
-                                type="text"
-                                id="studentName"
-                                class="profile__name-input hidden"
-                                placeholder="ФИО ученика"
-                            />
+                            <span id="studentNameDisplay" class="profile__name-text">Ученик</span>
                         </div>
                         <div class="profile__age">
-                            <label class="profile__age-label">Возраст:</label>
                             <span id="studentAgeDisplay" class="profile__age-text"></span>
-                            <input
-                                type="number"
-                                id="studentAge"
-                                class="profile__age-input hidden"
-                                min="6"
-                                max="25"
-                            />
                         </div>
                     </div>
+
+                    <button class="profile__edit-btn" id="editModeBtn">
+                        <span>Изменить</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
 
                 <div class="grades">
@@ -96,6 +82,7 @@
             </div>
         </div>
 
+        <!-- Subject Modal -->
         <div class="modal hidden" id="subjectModal">
             <div class="modal__content">
                 <button class="modal__close" aria-label="Close modal">&times;</button>
@@ -108,6 +95,36 @@
                     <div class="modal__section">
                         <h3 class="modal__subtitle">Предстоящие задания</h3>
                         <ul class="modal__tasks" id="tasksList"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Profile Modal -->
+        <div class="modal hidden" id="editProfileModal">
+            <div class="modal__content">
+                <button class="modal__close" aria-label="Close modal">&times;</button>
+                <h2 class="modal__title">Редактировать профиль</h2>
+                <div class="modal__body">
+                    <div class="edit-profile">
+                        <div class="edit-profile__image">
+                            <div class="edit-profile__image-preview">
+                                <img id="imagePreview" src="../../public/default-avatar.png" alt="Preview" />
+                            </div>
+                            <input type="file" id="imageUpload" accept="image/*" class="edit-profile__image-input" />
+                            <label for="imageUpload" class="edit-profile__image-label">Выбрать фото</label>
+                        </div>
+                        <div class="edit-profile__form">
+                            <div class="edit-profile__field">
+                                <label for="studentName" class="edit-profile__label">ФИО</label>
+                                <input type="text" id="studentName" class="edit-profile__input" placeholder="Введите ФИО" />
+                            </div>
+                            <div class="edit-profile__field">
+                                <label for="studentAge" class="edit-profile__label">Возраст</label>
+                                <input type="number" id="studentAge" class="edit-profile__input" min="6" max="25" placeholder="Введите возраст" />
+                            </div>
+                            <button class="edit-profile__submit" id="saveProfileBtn">Сохранить</button>
+                        </div>
                     </div>
                 </div>
             </div>
