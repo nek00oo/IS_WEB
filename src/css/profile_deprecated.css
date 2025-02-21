@@ -1,0 +1,52 @@
+body {
+    font-family: Cambria, sans-serif;
+    color: #333;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #6a11cb;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+p strong {
+    color: #333;
+}
+
+#userFullName,
+#userUsername,
+#userEmail,
+#userPhone,
+#userGender {
+    font-weight: bold;
+    color: #555;
+}
+
+a {
+    color: #2575fc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

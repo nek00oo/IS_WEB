@@ -1,21 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>User Profile</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student Profile</title>
         <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/profile.css">
+        <link rel="stylesheet" href="../css/profile.css" />
     </head>
     <body>
-        <div class="wrapper">
-            <div class="profile-container">
-                <h2>User Profile</h2>
-                <p><strong>Full Name:</strong> <span id="userFullName"></span></p>
-                <p><strong>Username:</strong> <span id="userUsername"></span></p>
-                <p><strong>Email:</strong> <span id="userEmail"></span></p>
-                <p><strong>Phone:</strong> <span id="userPhone"></span></p>
-                <p><strong>Gender:</strong> <span id="userGender"></span></p>
+        <nav class="nav">
+            <button class="nav__button" id="editModeBtn">Режим редактирования</button>
+        </nav>
+
+        <div class="container">
+            <div class="profile">
+                <div class="profile__header">
+                    <div class="profile__image-wrapper">
+                        <img
+                            id="profileImage"
+                            class="profile__image"
+                            src="../../public/profile_photo.png"
+                            alt="Profile Photo"
+                        />
+                        <input type="file" id="imageUpload" class="profile__image-input" accept="image/*" />
+                        <label for="imageUpload" class="profile__image-upload">+</label>
+                    </div>
+
+                    <div class="profile__info">
+                        <div class="profile__name">
+                            <span id="studentNameDisplay" class="profile__name-text"></span>
+                            <input
+                                type="text"
+                                id="studentName"
+                                class="profile__name-input hidden"
+                                placeholder="ФИО ученика"
+                            />
+                        </div>
+                        <div class="profile__age">
+                            <label class="profile__age-label">Возраст:</label>
+                            <span id="studentAgeDisplay" class="profile__age-text"></span>
+                            <input
+                                type="number"
+                                id="studentAge"
+                                class="profile__age-input hidden"
+                                min="6"
+                                max="25"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grades">
+                    <h2 class="grades__title">Успеваемость</h2>
+                    <div class="subjects">
+                        <div class="subject" data-subject="math">
+                            <h3 class="subject__title">Математика</h3>
+                            <div class="subject__grades">
+                                <span class="subject__grade">5</span>
+                                <span class="subject__grade">4</span>
+                                <span class="subject__grade">5</span>
+                            </div>
+                            <div class="subject__progress">
+                                <div class="subject__progress-bar" style="width: 85%"></div>
+                            </div>
+                            <p class="subject__status">Выполнено задач: 15/20</p>
+                        </div>
+
+                        <div class="subject" data-subject="physics">
+                            <h3 class="subject__title">Физика</h3>
+                            <div class="subject__grades">
+                                <span class="subject__grade">4</span>
+                                <span class="subject__grade">4</span>
+                                <span class="subject__grade">5</span>
+                            </div>
+                            <div class="subject__progress">
+                                <div class="subject__progress-bar" style="width: 75%"></div>
+                            </div>
+                            <p class="subject__status">Выполнено задач: 12/20</p>
+                        </div>
+
+                        <div class="subject" data-subject="russian">
+                            <h3 class="subject__title">Русский язык</h3>
+                            <div class="subject__grades">
+                                <span class="subject__grade">5</span>
+                                <span class="subject__grade">5</span>
+                                <span class="subject__grade">4</span>
+                            </div>
+                            <div class="subject__progress">
+                                <div class="subject__progress-bar" style="width: 90%"></div>
+                            </div>
+                            <p class="subject__status">Выполнено задач: 18/20</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal hidden" id="subjectModal">
+            <div class="modal__content">
+                <button class="modal__close" aria-label="Close modal">&times;</button>
+                <h2 class="modal__title" id="modalTitle"></h2>
+                <div class="modal__body">
+                    <div class="modal__section">
+                        <h3 class="modal__subtitle">График успеваемости</h3>
+                        <div class="modal__chart"></div>
+                    </div>
+                    <div class="modal__section">
+                        <h3 class="modal__subtitle">Предстоящие задания</h3>
+                        <ul class="modal__tasks" id="tasksList"></ul>
+                    </div>
+                </div>
             </div>
         </div>
 
