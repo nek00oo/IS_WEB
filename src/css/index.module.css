@@ -1,11 +1,11 @@
 :root {
-    --font-family: "Inter", sans-serif;
+    --font-family: 'Inter', sans-serif;
     --pages-background-color: #edf2f4;
     --header-text-color: #edf2f4;
-    --main_card-background-color: #2B2D42;
+    --main_card-background-color: #2b2d42;
     --card-text-color: #3e3e3e;
     --primary-button-background-color: #ef233c;
-    --primary-button-background-color-active: #AC172AFF;
+    --primary-button-background-color-active: #ac172aff;
     --hover-border-color: #ef233c;
     --secondary-button-background-color: #4a4c5a;
 }
@@ -71,7 +71,6 @@ body {
     margin-bottom: 18px;
 }
 
-
 .header__title {
     margin-bottom: 20px;
     font-weight: 600;
@@ -104,7 +103,8 @@ body {
     gap: 10px;
 }
 
-.main-card, .main-card__large {
+.main-card,
+.main-card__large {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +128,8 @@ body {
     margin-bottom: 20px;
 }
 
-.main-card__icon, .main-card__image {
+.main-card__icon,
+.main-card__image {
     transition: color 0.5s;
     margin-bottom: 20px;
 }
@@ -217,6 +218,153 @@ body {
     color: #d90429;
 }
 
+.teachers-section {
+    max-width: 90%;
+    margin: 0 auto 60px;
+    padding: 40px 0;
+}
+
+.teachers-section__title {
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 0.01em;
+    color: #1f1f1f;
+    margin-bottom: 22px;
+}
+
+.teachers-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.teacher-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.teacher-card.featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.teacher-card.small {
+    aspect-ratio: 1;
+}
+
+.teacher-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teacher-card.featured .teacher-card__image {
+    border-radius: 10px;
+    height: 100%;
+}
+
+.teacher-card__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.teacher-card.featured .teacher-card__content {
+    padding: 0;
+}
+
+.teacher-card__name {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--card-text-color);
+}
+
+.teacher-card__title {
+    font-size: 16px;
+    color: #666;
+}
+
+.teacher-card__description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--card-text-color);
+}
+
+.footer {
+    background: var(--main_card-background-color);
+    padding: 60px 0 40px;
+    color: var(--header-text-color);
+}
+
+.footer__content {
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+}
+
+.footer__logo {
+    width: 100px;
+    height: auto;
+}
+
+.footer__grid {
+    display: grid;
+    gap: 40px;
+}
+
+.footer__column h3 {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__link {
+    color: var(--header-text-color);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer__link:hover {
+    opacity: 1;
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .teachers-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .teachers-grid__small {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 @media (min-width: 800px) {
     .header__menu {
@@ -316,6 +464,16 @@ body {
     .main-card-6 {
         grid-column: 2 span;
         grid-row: 4 / 5;
+    }
+}
+
+@media (min-width: 1024px) {
+    .teachers-section {
+        max-width: 1200px;
+    }
+
+    .footer__content {
+        max-width: 1200px;
     }
 }
 
@@ -454,7 +612,8 @@ body {
 }
 
 @media (any-hover: hover) {
-    .main-card:hover, .main-card__large:hover {
+    .main-card:hover,
+    .main-card__large:hover {
         border: 1px solid var(--hover-border-color);
     }
 
@@ -464,10 +623,12 @@ body {
     }
 }
 
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
 
-
-
-
-
-
-
+.fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
