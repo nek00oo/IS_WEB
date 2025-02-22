@@ -16,7 +16,6 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     const spinner = document.getElementById('spinner');
     spinner.style.display = 'block';
-    const errorBanner = document.getElementById('errorBanner');
 
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -31,7 +30,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
             if (user) {
                 iziToast.success({
                     message: 'Вы успешно вошли!',
-                    position: 'bottomRight'
+                    position: 'bottomRight',
                 });
                 console.log('Login successful:', user);
                 localStorage.setItem('userData', JSON.stringify(user));
@@ -43,8 +42,6 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
                     message: 'Пользователь не найден',
                     position: 'bottomRight',
                 });
-                errorBanner.innerHTML = "Пользователь не найден"
-                errorBanner.style.display = 'block';
             }
         })
         .catch(error => {
@@ -53,8 +50,6 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
                 position: 'bottomRight',
             });
             console.error('Error login user:', error);
-            errorBanner.innerHTML = "Что-то пошло не так"
-            errorBanner.style.display = 'block';
         })
         .finally(() => {
         spinner.style.display = 'none';

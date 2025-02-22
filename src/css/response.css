@@ -10,18 +10,6 @@
     margin: auto auto;
 }
 
-.error-banner {
-    display: none;
-    background-color: rgba(255, 175, 180, .9);
-    color: #721c24;
-    position: absolute;
-    top: -40px;
-    left: 25%;
-    padding: 10px;
-    border: 1px solid rgb(255, 175, 180);
-    border-radius: 4px;
-    text-align: center;
-}
 
 @keyframes spin {
     0% {
@@ -47,7 +35,19 @@
 }
 
 .iziToast-color-red .iziToast-message {
-    color: #721c24 !important;
+    color: white !important;
+}
+
+.iziToast.iziToast-color-red {
+    background: #ef233c !important;
+}
+
+.iziToast-color-red > .iziToast-body {
+    margin: unset !important;
+}
+
+.iziToast-color-red > .iziToast-body .iziToast-icon.ico-error {
+    display: none;
 }
 
 .iziToast-progressbar {
