@@ -72,7 +72,7 @@
     background-color: var(--primary-button-background-color-active);
 }
 
-.form {
+.signUp__form, .signIn__form {
     background-color: white;
     display: flex;
     align-items: center;
@@ -113,36 +113,36 @@
     border-color: var(--hover-border-color);
 }
 
-.signin__bottom {
+.signIn__bottom {
     display: none;
 }
 
-.signin__wrapper,
-.signup__wrapper {
+.signIn__wrapper,
+.signUp__wrapper {
     position: absolute;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
 }
 
-.signin__wrapper {
+.signIn__wrapper {
     left: 0;
     width: 50%;
     z-index: 2;
 }
 
-.auth__container.active .signin__wrapper {
+.auth__container.active .signIn__wrapper {
     transform: translateX(100%);
 }
 
-.signup__wrapper {
+.signUp__wrapper {
     left: 0;
     width: 50%;
     opacity: 0;
     z-index: 1;
 }
 
-.auth__container.active .signup__wrapper {
+.auth__container.active .signUp__wrapper {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
@@ -227,11 +227,11 @@
         width: 320px;
     }
 
-    .signin__wrapper {
+    .signIn__wrapper {
         width: 100%;
     }
 
-    .signin__bottom {
+    .signIn__bottom {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -239,7 +239,7 @@
     }
 
     .auth__toggle,
-    .auth__signup {
+    .auth__signUp {
         display: none;
     }
 }
