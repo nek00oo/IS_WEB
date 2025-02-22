@@ -20,7 +20,6 @@ body {
     background-color: var(--main_card-background-color);
     margin: 5px 5px 42px;
     border-radius: 20px;
-
 }
 
 .header__wrapper {
@@ -43,8 +42,12 @@ body {
 }
 
 .header__menu-button {
-    font-size: 18px;
+    font-size: 17px;
     color: #fff;
+}
+
+.menu-button__enterIcon {
+    display: none;
 }
 
 .header__body {
@@ -118,6 +121,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .main-card__large .main-card__title {
@@ -136,6 +140,7 @@ body {
 
 .main-card__top {
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
@@ -225,16 +230,24 @@ body {
     }
 
     .header__menu-button {
-        font-weight: 600;
-        font-size: 18px;
-        color: #fff;
-        padding: 11px 26px 13px;
+        font-weight: 500;
+        padding: 9px 16px 11px;
         background: #4a4c5a;
-        border-radius: 16px;
+        border-radius: 12px;
     }
 
     .header__menu-button:last-child {
         background: var(--primary-button-background-color);
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+    }
+
+    .menu-button__enterIcon {
+        display: block;
+        width: 18px;
+        height: 18px;
+        fill: white;
     }
 
     .main-section__cards {
@@ -252,10 +265,12 @@ body {
 
     .main-card__top {
         flex-direction: row;
+        text-align: initial;
     }
 
     .main-card__content {
         align-items: initial;
+        text-align: initial;
     }
 
     .main-card__icon {
@@ -310,7 +325,7 @@ body {
     }
 
     .header__top {
-        padding-top: 36px;
+        padding-top: 16px;
     }
 
     .header__body {
@@ -357,7 +372,6 @@ body {
 }
 
 @media (min-width: 1500px) {
-
     .main-card {
         justify-content: center;
         padding: 28px;
