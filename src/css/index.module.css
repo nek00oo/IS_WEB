@@ -220,8 +220,7 @@ body {
 
 .teachers-section {
     max-width: 90%;
-    margin: 0 auto 60px;
-    padding: 40px 0;
+    margin: 40px auto 100px;
 }
 
 .teachers-section__title {
@@ -316,7 +315,10 @@ body {
 
 .footer__grid {
     display: grid;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(16%, 1fr));
+    column-gap: 60px;
+    row-gap: 20px;
+
 }
 
 .footer__column h3 {
@@ -362,7 +364,7 @@ body {
     }
 
     .footer__grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, max-content);
     }
 }
 

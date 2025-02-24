@@ -16,6 +16,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
     const spinner = document.getElementById('spinner');
     spinner.style.display = 'block';
+    console.log(spinner);
 
     const email = e.target.email.value;
     const password = e.target.password.value;

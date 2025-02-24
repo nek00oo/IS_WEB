@@ -49,7 +49,7 @@ window.addEventListener('load', function() {
         const userData = JSON.parse(userDataString);
         studentNameDisplay.textContent = userData.name;
         studentAgeDisplay.textContent = userData.age ? userData.age : '';
-        profileImage.src = userData.image ? userData.image : '';
+        profileImage.src = userData.image ? userData.image : '../../public/default-avatar.png';
     }
 
 });
